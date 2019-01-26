@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "714012483003",
+    "firebase_url": "https://smart-home-f7bee.firebaseio.com",
+    "project_id": "smart-home-f7bee",
+    "storage_bucket": "smart-home-f7bee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714012483003:android:a1c6cff5be5564c5",
+        "android_client_info": {
+          "package_name": "com.github.soiyeah.smarthome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714012483003-3cmos80pb51frop2bebck4uq142f5ho9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.soiyeah.smarthome",
+            "certificate_hash": "2a96df51388de118f0290b48db112d6a3ab07685"
+          }
+        },
+        {
+          "client_id": "714012483003-88g24v42hgftaa74bmf77bmlj0lvd9kp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWCyBEJF-qZqcWf4dkVdijddh2Ghid-LE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714012483003-88g24v42hgftaa74bmf77bmlj0lvd9kp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
