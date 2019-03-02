@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public static DatabaseReference myRef = database.getReference();
 
 
-
     Switch s1;
     Switch s2;
 
@@ -68,25 +67,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-/* color palette
-    <color name="colorPrimary">#353439</color>
-    <color name="colorPrimaryDark">#28272c</color>
-    <color name="colorPrimaryDarker">#212024</color>
-    <color name="colorAccent">#1a927c</color>
-    <color name="colorTextDark">#6e7475</color>
-    <color name="colorTextLight">#9a9ba0</color>
-
-new
-<resources>
-    <color name="colorPrimary">#36353d</color>
-    <color name="colorPrimaryDark">#323039</color>
-    <color name="colorPrimaryDarker">#28252e</color>
-    <color name="colorAccent">#1a927c</color>
-    <color name="colorTextDark">#717175</color>
-    <color name="colorTextLight">#9a9ba0</color>
-</resources>
-
-
-*/
 
 }

@@ -1,35 +1,39 @@
 package com.github.soiyeah.smarthome;
 
+import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
-import static com.github.soiyeah.smarthome.MainActivity.myRef;
 
 public class Device
 {
-    DatabaseReference dbRef;
-
     private String name;
     private String Description;
     private String status;
-
     private int brightness;
+    private DbHelper dbHelper;
 
     public Device(String ref)
     {
-        this.dbRef = myRef.child("devices").child(ref);
-        this.checkStatusListener();
+        dbHelper = new DbHelper(ref);
+        checkStatusListener();
+
+    }
+
+
+    public DbHelper getDbHelper() {
+        return dbHelper;
     }
 
     public void checkStatusListener()
     {
 
-        this.dbRef.addValueEventListener(new ValueEventListener() {
+        dbHelper.getDbRef().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
@@ -38,7 +42,6 @@ public class Device
 
                 status = dataSnapshot.getValue(String.class);
                 Log.d("file", "Value is: " + status);
-                //tv1.setText(value);
             }
 
             @Override
@@ -47,8 +50,6 @@ public class Device
                 Log.w("file", "Failed to read value.", error.toException());
             }
         });
-
-        Log.d("file", "status in log " + status);
     }
 
     public String getStatus()
@@ -59,15 +60,32 @@ public class Device
 
     public void turnOn()
     {
-        dbRef.setValue("on");
+        dbHelper.getDbRef().setValue("on");
     }
 
     public void turnOff()
     {
-        dbRef.setValue("off");
+        dbHelper.getDbRef().setValue("off");
     }
 
+    public class LongOperation extends AsyncTask<String, Void, String> {
 
+        @Override
+        protected String doInBackground(String... params) {
+           // checkStatusListener();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+
+            // txt.setText("Executed"); // txt.setText(result);
+            // might want to change "executed" for the returned string passed
+            // into onPostExecute() but that is upto you
+        }
+
+
+    }
 
 
 
